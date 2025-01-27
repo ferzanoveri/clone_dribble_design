@@ -1,4 +1,5 @@
 import 'package:clone_dribble_design/utils/emoticon_face.dart';
+import 'package:clone_dribble_design/utils/exercise_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,8 +17,8 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
         ],
       ),
       body: SafeArea(
@@ -230,16 +231,23 @@ class _HomePageState extends State<HomePage> {
                       ),
 
                       //   listview of exercises
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: ListTile(
-                          leading: Icon(Icons.favorite),
-                          title: Text('Speaking Skills'),
-                          subtitle: Text('15 Exercises'),
-                        ),
+                      ExerciseTile(
+                        icon: Icons.favorite,
+                        exerciseName: 'Speaking Skills',
+                        numberOfExercise: 15,
+                        color: Colors.orangeAccent,
+                      ),
+                      ExerciseTile(
+                        icon: Icons.person,
+                        exerciseName: 'Reading Skills',
+                        numberOfExercise: 15,
+                        color: Colors.green,
+                      ),
+                      ExerciseTile(
+                        icon: Icons.star,
+                        exerciseName: 'Writing Skills',
+                        numberOfExercise: 15,
+                        color: Colors.pink,
                       ),
                     ],
                   ),
